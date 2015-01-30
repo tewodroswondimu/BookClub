@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface FriendsViewController : UIViewController
 
+@property BOOL currentView;
 
 @end
 

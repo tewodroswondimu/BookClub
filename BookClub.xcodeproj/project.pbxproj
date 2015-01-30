@@ -10,11 +10,20 @@
 		18170D141A7990AB00455CF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 18170D131A7990AB00455CF3 /* main.m */; };
 		18170D171A7990AB00455CF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 18170D161A7990AB00455CF3 /* AppDelegate.m */; };
 		18170D1A1A7990AB00455CF3 /* BookClub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 18170D181A7990AB00455CF3 /* BookClub.xcdatamodeld */; };
-		18170D1D1A7990AB00455CF3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18170D1C1A7990AB00455CF3 /* ViewController.m */; };
+		18170D1D1A7990AB00455CF3 /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18170D1C1A7990AB00455CF3 /* FriendsViewController.m */; };
 		18170D201A7990AB00455CF3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18170D1E1A7990AB00455CF3 /* Main.storyboard */; };
 		18170D221A7990AB00455CF3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18170D211A7990AB00455CF3 /* Images.xcassets */; };
 		18170D251A7990AB00455CF3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18170D231A7990AB00455CF3 /* LaunchScreen.xib */; };
 		18170D311A7990AB00455CF3 /* BookClubTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 18170D301A7990AB00455CF3 /* BookClubTests.m */; };
+		18CDA1A61A7AFC1C0076C81B /* PeopleListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18CDA1A51A7AFC1C0076C81B /* PeopleListViewController.m */; };
+		18F468711A7AD7B800744457 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F468701A7AD7B800744457 /* Person.m */; };
+		18F468721A7AD7B800744457 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F468701A7AD7B800744457 /* Person.m */; };
+		18F468751A7AD7B800744457 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F468741A7AD7B800744457 /* Book.m */; };
+		18F468761A7AD7B800744457 /* Book.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F468741A7AD7B800744457 /* Book.m */; };
+		18F468791A7AD7B800744457 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F468781A7AD7B800744457 /* Comment.m */; };
+		18F4687A1A7AD7B800744457 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F468781A7AD7B800744457 /* Comment.m */; };
+		18F81BCB1A7B189900812B8E /* FriendDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F81BCA1A7B189900812B8E /* FriendDetailViewController.m */; };
+		18F81BCE1A7B1C7700812B8E /* AddBookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F81BCD1A7B1C7700812B8E /* AddBookViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,14 +43,26 @@
 		18170D151A7990AB00455CF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		18170D161A7990AB00455CF3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		18170D191A7990AB00455CF3 /* BookClub.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BookClub.xcdatamodel; sourceTree = "<group>"; };
-		18170D1B1A7990AB00455CF3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		18170D1C1A7990AB00455CF3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		18170D1B1A7990AB00455CF3 /* FriendsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		18170D1C1A7990AB00455CF3 /* FriendsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
 		18170D1F1A7990AB00455CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		18170D211A7990AB00455CF3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18170D241A7990AB00455CF3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		18170D2A1A7990AB00455CF3 /* BookClubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BookClubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		18170D2F1A7990AB00455CF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18170D301A7990AB00455CF3 /* BookClubTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BookClubTests.m; sourceTree = "<group>"; };
+		18CDA1A41A7AFC1C0076C81B /* PeopleListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleListViewController.h; sourceTree = "<group>"; };
+		18CDA1A51A7AFC1C0076C81B /* PeopleListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleListViewController.m; sourceTree = "<group>"; };
+		18F4686F1A7AD7B800744457 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		18F468701A7AD7B800744457 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		18F468731A7AD7B800744457 /* Book.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Book.h; sourceTree = "<group>"; };
+		18F468741A7AD7B800744457 /* Book.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Book.m; sourceTree = "<group>"; };
+		18F468771A7AD7B800744457 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		18F468781A7AD7B800744457 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		18F81BC91A7B189900812B8E /* FriendDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDetailViewController.h; sourceTree = "<group>"; };
+		18F81BCA1A7B189900812B8E /* FriendDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDetailViewController.m; sourceTree = "<group>"; };
+		18F81BCC1A7B1C7700812B8E /* AddBookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddBookViewController.h; sourceTree = "<group>"; };
+		18F81BCD1A7B1C7700812B8E /* AddBookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddBookViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,12 +106,19 @@
 			children = (
 				18170D151A7990AB00455CF3 /* AppDelegate.h */,
 				18170D161A7990AB00455CF3 /* AppDelegate.m */,
-				18170D1B1A7990AB00455CF3 /* ViewController.h */,
-				18170D1C1A7990AB00455CF3 /* ViewController.m */,
+				18170D1B1A7990AB00455CF3 /* FriendsViewController.h */,
+				18170D1C1A7990AB00455CF3 /* FriendsViewController.m */,
+				18F81BC91A7B189900812B8E /* FriendDetailViewController.h */,
+				18F81BCA1A7B189900812B8E /* FriendDetailViewController.m */,
+				18CDA1A41A7AFC1C0076C81B /* PeopleListViewController.h */,
+				18CDA1A51A7AFC1C0076C81B /* PeopleListViewController.m */,
+				18F81BCC1A7B1C7700812B8E /* AddBookViewController.h */,
+				18F81BCD1A7B1C7700812B8E /* AddBookViewController.m */,
 				18170D1E1A7990AB00455CF3 /* Main.storyboard */,
 				18170D211A7990AB00455CF3 /* Images.xcassets */,
 				18170D231A7990AB00455CF3 /* LaunchScreen.xib */,
 				18170D181A7990AB00455CF3 /* BookClub.xcdatamodeld */,
+				18170D4D1A799BDE00455CF3 /* Model */,
 				18170D111A7990AB00455CF3 /* Supporting Files */,
 			);
 			path = BookClub;
@@ -120,6 +148,19 @@
 				18170D2F1A7990AB00455CF3 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18170D4D1A799BDE00455CF3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18F468771A7AD7B800744457 /* Comment.h */,
+				18F468781A7AD7B800744457 /* Comment.m */,
+				18F468731A7AD7B800744457 /* Book.h */,
+				18F468741A7AD7B800744457 /* Book.m */,
+				18F4686F1A7AD7B800744457 /* Person.h */,
+				18F468701A7AD7B800744457 /* Person.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,9 +263,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F468791A7AD7B800744457 /* Comment.m in Sources */,
 				18170D171A7990AB00455CF3 /* AppDelegate.m in Sources */,
 				18170D1A1A7990AB00455CF3 /* BookClub.xcdatamodeld in Sources */,
-				18170D1D1A7990AB00455CF3 /* ViewController.m in Sources */,
+				18F81BCE1A7B1C7700812B8E /* AddBookViewController.m in Sources */,
+				18F468711A7AD7B800744457 /* Person.m in Sources */,
+				18F81BCB1A7B189900812B8E /* FriendDetailViewController.m in Sources */,
+				18170D1D1A7990AB00455CF3 /* FriendsViewController.m in Sources */,
+				18CDA1A61A7AFC1C0076C81B /* PeopleListViewController.m in Sources */,
+				18F468751A7AD7B800744457 /* Book.m in Sources */,
 				18170D141A7990AB00455CF3 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -233,7 +280,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F468721A7AD7B800744457 /* Person.m in Sources */,
+				18F468761A7AD7B800744457 /* Book.m in Sources */,
 				18170D311A7990AB00455CF3 /* BookClubTests.m in Sources */,
+				18F4687A1A7AD7B800744457 /* Comment.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +466,7 @@
 				18170D361A7990AB00455CF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		18170D371A7990AB00455CF3 /* Build configuration list for PBXNativeTarget "BookClubTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +475,7 @@
 				18170D391A7990AB00455CF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
