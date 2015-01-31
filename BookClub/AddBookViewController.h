@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Person.h"
 
 @interface AddBookViewController : UIViewController
+
+@property NSManagedObjectContext *context;
+@property Person *person; 
 
 @end

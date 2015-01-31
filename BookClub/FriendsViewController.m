@@ -12,7 +12,7 @@
 #import "AppDelegate.h"
 #import "Person.h"
 
-@interface FriendsViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface FriendsViewController () <UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate>
 
 @property NSMutableArray *peopleArray;
 @property NSMutableArray *friendsArray;
@@ -20,6 +20,9 @@
 @property NSManagedObjectContext *context;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+
+@property NSArray *searchFriendsArray;
 
 @end
 
@@ -30,6 +33,8 @@
 
     AppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     self.context = delegate.managedObjectContext;
+
+    self.searchBar.delegate = self;
 
     // Create a friends array to store an array of friends
     self.friendsArray = [NSMutableArray new];
@@ -73,6 +78,11 @@
             [self.friendsArray addObject:person];
         }
     }
+
+    NSSortDescriptor *sortDescriptorByPersonRecommendedBooks = [[NSSortDescriptor alloc] initWithKey:@"recommendedBooks.@count" ascending:NO];
+//    NSSortDescriptor *sortDescriptorByPersonRecommendedBooks = [[NSSortDescriptor alloc] initWithKey:@"name" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptorByPersonRecommendedBooks];
+    self.friendsArray = [[self.friendsArray sortedArrayUsingDescriptors:sortDescriptors] mutableCopy];
 
     [self.tableView reloadData];
 }
@@ -135,15 +145,32 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return self.friendsArray.count;
+    if (self.searchBar.text.length != 0)
+    {
+        return self.searchFriendsArray.count;
+    }
+    else
+    {
+        return self.friendsArray.count;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"FriendsCell"];
-//    cell.textLabel.text = [self.friendsArray objectAtIndex:indexPath.row];
+    //    cell.textLabel.text = [self.friendsArray objectAtIndex:indexPath.row];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    cell.textLabel.text = [[self.friendsArray objectAtIndex:indexPath.row] name];
+
+    if (self.searchBar.text.length == 0) {
+        Person *person = [self.friendsArray objectAtIndex:indexPath.row];
+        cell.textLabel.text = person.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Number of books: %lu", person.recommendedBooks.count];
+    }
+    else {
+        Person *person = [self.searchFriendsArray objectAtIndex:indexPath.row];
+        cell.textLabel.text = person.name;
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"Number of books: %lu", person.recommendedBooks.count];
+    }
     return cell;
 }
 
@@ -177,6 +204,18 @@
         Person *person = self.friendsArray[self.tableView.indexPathForSelectedRow.row];
         fdvc.person = person;
     }
+}
+
+#pragma mark SEARCH
+
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
+{
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF.name contains[c] %@", searchText];
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:[self.friendsArray filteredArrayUsingPredicate:predicate]];
+    if (tempArray.count) {
+        self.searchFriendsArray = tempArray;
+    }
+    [self.tableView reloadData];
 }
 
 #pragma mark MEMORY MANAGEMENT

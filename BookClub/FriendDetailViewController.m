@@ -7,13 +7,16 @@
 //
 
 #import "FriendDetailViewController.h"
+#import "BookDetailViewController.h"
+#import "AddBookViewController.h"
+#import "Book.h"
 
-@interface FriendDetailViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface FriendDetailViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberOfBooksLabel;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property NSMutableArray *booksArray;
+@property NSArray *booksArray;
 
 @end
 
@@ -22,8 +25,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    // Assign the name label the person's name
     self.nameLabel.text = self.person.name;
+    self.navigationController.delegate = self;
+}
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    if (!self.booksArray.count)
+    {
+        self.booksArray = [self.person.recommendedBooks allObjects];
+        self.numberOfBooksLabel.text = [NSString stringWithFormat:@"Number of Books: %lu", self.booksArray.count];
+    }
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,23 +61,37 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return self.booksArray.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@""];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecommendedBookCell"];
+    Book *book = [self.booksArray objectAtIndex:indexPath.row];
+    cell.textLabel.text = book.title;
+    cell.detailTextLabel.text = book.author;
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:@"AddSegue"]) {
+        AddBookViewController *abvc = [segue destinationViewController];
+        abvc.context = self.context;
+        abvc.person = self.person; 
+    } else if ([segue.identifier isEqualToString:@"BookDetailSegue"])
+    {
+        BookDetailViewController *bdvc = [segue destinationViewController];
+        bdvc.book = [self.booksArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        bdvc.context = self.context;
+    }
 }
-*/
+
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated
+{
+    self.booksArray = [self.person.recommendedBooks allObjects];
+}
 
 @end
